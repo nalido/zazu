@@ -20,6 +20,7 @@ class PluginWrapper extends React.Component {
       query: '',
       theme: '',
       results: [],
+      useRawOrder: false,
       plugins: [],
       activePlugin: null,
       activeBlock: null,
@@ -68,6 +69,7 @@ class PluginWrapper extends React.Component {
   clearResults = () => {
     this.context.logger.log('info', 'clearing results')
     this.setState({
+      useRawOrder: false,
       results: [],
     })
   }
@@ -142,6 +144,11 @@ class PluginWrapper extends React.Component {
       const pluginName = plugin.id
       const searchResults = plugin.search(query)
       const respondedBlocks = Object.keys(searchResults)
+      const options = plugin.options || {};
+      const useRawOrder = options['useRawOrder'] || false;
+
+      console.log("DEBUG>>>plugin", plugin)
+      console.log("DEBUG>>>useRawOrder", useRawOrder)
 
       // 1. when input resolves replace it's results
       respondedBlocks.map((blockId) => {
@@ -158,6 +165,7 @@ class PluginWrapper extends React.Component {
           // 3. Add new block results
           this.setState({
             results: filteredResults.concat(results),
+            useRawOrder: useRawOrder
           })
         })
       })
@@ -187,7 +195,7 @@ class PluginWrapper extends React.Component {
   }
 
   render () {
-    const { query, theme, results } = this.state
+    const { query, theme, results, useRawOrder } = this.state
     const noPlugins = this.state.plugins.length === 0
     const stillLoading = this.state.loaded !== this.state.plugins.length
     if (stillLoading) {
@@ -209,6 +217,7 @@ class PluginWrapper extends React.Component {
         query={query}
         theme={theme && theme.css}
         results={results}
+        useRawOrder={useRawOrder}
         scopeBlock={this.scopeBlock}
         handleResetQuery={this.handleResetQuery}
         handleQueryChange={this.handleQueryChange}

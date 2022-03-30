@@ -1,10 +1,10 @@
 const resultSorter = {
-  sort (results, clickedResults) {
+  sort (results, clickedResults, useRawOrder) {
     return results.slice(0).map((result) => {
       if (result.id) {
-        const score = clickedResults.reduce((memo, clickedResult) => {
+        const score = clickedResults.reduce((memo, clickedResult, index) => {
           if (clickedResult.id === result.id) memo++
-          return memo
+          return useRawOrder? index: memo
         }, result.blockRank)
         return { score, result }
       }
