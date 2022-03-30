@@ -50,7 +50,7 @@
     },
     "mac": {
       "target": [
-        "dmg"
+        "pkg"
       ],
       "icon": "resources/osx/icon.icns",
       "category": "public.app-category.productivity"
@@ -97,10 +97,8 @@
     "winston-transport": "^4.3.0"
   },
   "devDependencies": {
-    "asar": "^2.0.1",
-    "babel-eslint": "^10.0.2",
-    "babel-loader": "^8.0.6",
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/plugin-transform-react-inline-elements": "^7.2.0",
@@ -108,9 +106,11 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
     "@babel/runtime": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "babel-plugin-dynamic-import-node-babel-7": "^2.0.7",
+    "asar": "^2.0.1",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
     "babel-plugin-closure-elimination": "^1.3.0",
+    "babel-plugin-dynamic-import-node-babel-7": "^2.0.7",
     "babel-plugin-macros": "^2.6.1",
     "chai": "^4.2.0",
     "cheerio": "^1.0.0-rc.3",

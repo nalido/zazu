@@ -70,6 +70,7 @@ npm install
 npm start
 ~~~
 
+
 If you enable debug mode it will make it so Zazu won't hide and the dev tools
 will open by default. You can enable debug mode by adding a `debug` flag to
 `true` inside of your `~/.zazurc.json`
@@ -99,3 +100,8 @@ release on GitHub.
 Lastly, you should re-publish the docs. Zazu uses the doc website to see if a
 new release is available so doing a quick release will allow others to download
 the newest version. Simply run `npm run docs:publish`.
+
+## FAQ
+> `Can't locate Mac/Memory.pm in @INC (you may need to install the Mac::Memory module) `
+change target of mac from `dmg` to `pkg` then run:
+npm run build

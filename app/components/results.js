@@ -60,8 +60,11 @@ class Results extends React.PureComponent {
         key="preview-style"
         css={`
           div.results blockquote {
-            max-width: 70%;
+            width: 50%;
+            font-size: 12px;
             overflow: auto;
+            margin-inline-start: 12px;
+            margin-inline-end: 12px;
           }
         `}
       />,
