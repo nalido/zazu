@@ -50,9 +50,6 @@ class DatabaseWrapper extends React.Component {
   render () {
     const { handleQueryChange, handleResetQuery, query, theme, results, scopeBlock, useRawOrder } = this.props
 
-    console.log("DEBUG>>>results", results)
-    console.log("DEBUG>>>useRawOrder", useRawOrder)
-
     return (
       <Zazu
         query={query}

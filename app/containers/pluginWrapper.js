@@ -147,9 +147,6 @@ class PluginWrapper extends React.Component {
       const options = plugin.options || {};
       const useRawOrder = options['useRawOrder'] || false;
 
-      console.log("DEBUG>>>plugin", plugin)
-      console.log("DEBUG>>>useRawOrder", useRawOrder)
-
       // 1. when input resolves replace it's results
       respondedBlocks.map((blockId) => {
         const inputPromise = searchResults[blockId]

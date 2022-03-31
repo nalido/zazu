@@ -102,6 +102,12 @@ new release is available so doing a quick release will allow others to download
 the newest version. Simply run `npm run docs:publish`.
 
 ## FAQ
-> `Can't locate Mac/Memory.pm in @INC (you may need to install the Mac::Memory module) `
-change target of mac from `dmg` to `pkg` then run:
-npm run build
++ `Can't locate Mac/Memory.pm in @INC (you may need to install the Mac::Memory module) `
+> change target of mac from `dmg` to `pkg` then run:
+> npm run build
+
++ 手动下载plugin代码后
+> 需要在plugin代码文件夹中执行`npm install`之后， 就可以顺利加载插件了。 不然zazu会尝试重新下载插件，可能会下载失败。
+
++ 本地开发插件， 不用上传到github
+> 只要给插件配置`useLocal:true`即可

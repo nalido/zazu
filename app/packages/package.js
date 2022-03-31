@@ -6,6 +6,7 @@ const configuration = require('../lib/configuration')
 const logger = require('../lib/logger')
 const notification = require('../lib/notification')
 const retry = require('../lib/retry')
+const installStatus = require('../lib/installStatus')
 
 class Package {
   constructor (url) {
@@ -14,6 +15,8 @@ class Package {
     this.clone = clone
     this.pull = pull
     this.logger = logger.bindMeta({ plugin: this.url })
+    // 是否使用本地代码， 不尝试从github下载
+    this.useLocal = false
   }
 
   load () {
@@ -67,6 +70,9 @@ class Package {
   }
 
   download () {
+    if(this.useLocal){
+      return Promise.resolve('cloned')
+    }
     return this.clone(this.url, this.path)
   }
 }

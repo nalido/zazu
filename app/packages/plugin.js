@@ -23,6 +23,8 @@ class Plugin extends Package {
     this.loaded = false
     this.activeState = true
     this.plugin = {}
+
+    this.useLocal = options['useLocal'] || false;
   }
 
   setActive (activeState) {

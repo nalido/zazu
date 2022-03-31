@@ -82,6 +82,7 @@
     "interweave": "^11.1.0",
     "mkdirp": "^0.5.1",
     "mousetrap": "^1.6.3",
+    "fs-jetpack": "^2.2.2",
     "nestdb": "^2.0.0",
     "node-notifier": "^5.4.0",
     "npm": "^6.9.0",
