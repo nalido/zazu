@@ -1,5 +1,6 @@
 const React = require('react')
 const PropTypes = require('prop-types')
+const { Markup } = require('interweave')
 
 class Result extends React.Component {
   click = () => {
@@ -59,6 +60,7 @@ class Result extends React.Component {
         {this.renderIcon()}
         <h2>{value.title}</h2>
         { value.subtitle && <h3>{value.subtitle}</h3> }
+        { value.preview && <Markup tagName="blockquote" content={`${value.preview}`} /> }
       </li>
     )
   }
